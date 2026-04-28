@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        /* Variasi Monokrom #7DA78C */
+        :root {
+            --primary-sage: #7DA78C;
+            --dark-sage: #5a7d65;
+            --light-sage: #a9c6b3;
+            --bg-sage: #f1f5f2;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-sage);
+            color: #333;
+        }
+
+        .project-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ini kuncinya: memaksa gambar menampilkan bagian atas */
+            object-position: top; 
+            transition: transform 0.5s;
+        }
+
+        .hero-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-sage) 0%, var(--dark-sage) 100%);
+            color: white;
+        }
+
+        /* Foto Profil Styling */
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--dark-sage);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-sage);
+            bottom: 0;
+            left: 0;
+        }
+
+        .navbar { background-color: var(--dark-sage) !important; }
+
+        .card { 
+            transition: transform 0.3s; 
+            border: none; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            overflow: hidden; /* Agar gambar tidak keluar dari border radius */
+        }
+        
+        .card:hover { transform: translateY(-5px); }
+
+        /* Project Image Styling */
+        .project-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            background-color: var(--light-sage);
+        }
+
+        .project-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .project-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .badge-sage {
+            background-color: var(--primary-sage);
+            color: white;
+            margin-right: 5px;
+        }
+
+        .btn-sage {
+            background-color: var(--primary-sage);
+            color: white;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btn-sage:hover {
+            background-color: var(--dark-sage);
+            color: white;
+        }
+
+        footer { background-color: #2d3a31; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Portofolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#pendidikan">Pendidikan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyek">Proyek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skillset">Keahlian</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center text-md-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="asset/foto wajah.jpeg" alt="Foto Profil" class="profile-img">
+                </div>
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold">Halo, Saya Devika Humayra</h1>
+                    <p class="lead mb-4">Seorang Pengembang Website yang berdedikasi untuk menciptakan pengalaman digital yang fungsional dan responsif. Saya berfokus pada membangun arsitektur website yang solid dan sistem manajemen data yang efisien.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+                        <a href="#proyek" class="btn btn-light btn-lg text-success fw-bold">Lihat Proyek</a>
+                        <a href="mailto:devikah.7b@gmail.com" class="btn btn-outline-light btn-lg">Hubungi Saya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        
+        <section id="pendidikan" class="mb-5">
+            <h2 class="section-title">Riwayat Pendidikan</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3" style="border-left: 4px solid var(--primary-sage);">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-dark">Sekolah Menengah Atas / Kurikulim Merdeka (Informatika)</h5>
+                            <p class="text-muted mb-1">SMA Negeri 20 Batam | 2022 - 2025</p>
+                            <p class="card-text text-secondary">Mempelajari dasar-dasar berpikir komputasional, bagaimana perangkat keras (hardware), perangkat lunak (software), dan interaksi manusia (brainware) bekerja sama, dan dasar HTML/CSS.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card mb-3" style="border-left: 4px solid var(--primary-sage);">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold text-dark">D4 Teknik Informatika / Teknologi Rekayasa Perangkat Lunak</h5>
+                            <p class="text-muted mb-1">Politeknik Negeri Batam | 2025 - Sekarang</p>
+                            <p class="card-text text-secondary">Fokus pada pengembangan perangkat lunak, struktur data, dan manajemen basis data relational.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyek" class="mb-5">
+            <h2 class="section-title">Proyek Terbaru</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="project-img-wrapper">
+                            <img src="asset/ajuk.png" alt="Preview Proyek Perpustakaan" style="object-position: top;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Sistem Pengajuan Dokumen Warga Digital</h5>
+                            <p class="card-text text-secondary small">Aplikasi berbasis web untuk mengelola pengajuan dokumen administrasi warga secara digital dan dapat mencetak surat dalam format PDF menggunakan PHP dan MySQL.</p>
+                            <div class="mb-3">
+                                <span class="badge badge-sage">PHP</span>
+                                <span class="badge badge-sage">Bootstrap</span>
+                            </div>
+                            <a href="https://pbl.polibatam.ac.id/pamerin/detail.php?title=project-aplikasi-berbasis-web---b&id=NDUxNg==&ta=Nw==&id_tim=NTQ2Mg==" class="btn btn-sm btn-sage px-3">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="project-img-wrapper">
+                            <img src="asset/alpro s1.png" alt="Preview Proyek Mahasiswa" style="object-position: top;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Aplikasi Converter File</h5>
+                            <p class="card-text text-secondary small">Membuat aplikasi untuk mengonversi file dari satu format ke format lainnya berbasis GUI.</p>
+                            <div class="mb-3">
+                                <span class="badge badge-sage">Python</span>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-sage px-3">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skillset" class="mb-5">
+            <h2 class="section-title">Skillset</h2>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-code-slash me-2"></i>Programming</h5>
+                            <div class="d-flex flex-wrap mb-3">
+                                <span class="badge badge-sage">HTML/CSS</span>
+                                <span class="badge badge-sage">Bootstrap</span>
+                                <span class="badge badge-sage">Python</span>
+                                <span class="badge badge-sage">Laravel</span>
+                                <span class="badge badge-sage">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-database me-2"></i>Database & Tools</h5>
+                            <div class="d-flex flex-wrap">
+                                <span class="badge badge-sage">MySQL / MariaDB</span>
+                                <span class="badge badge-sage">Git & GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-white py-5">
+        <div class="container text-center">
+            <h5 class="mb-4 text-uppercase fw-light">Temukan Saya di Media Sosial</h5>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="https://github.com/humayra19" class="text-white fs-3"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/devikahumayra" class="text-white fs-3"><i class="bi bi-linkedin"></i></a>
+                <a href="https://instagram.com/devka_may" class="text-white fs-3"><i class="bi bi-instagram"></i></a>
+            </div>
+            <hr class="w-25 mx-auto opacity-25">
+            <p class="mt-3 mb-0">&copy; 2026 Devika Humayra. Dibuat dengan Gaya Sage Monokrom.</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
